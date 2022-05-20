@@ -21,7 +21,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
     ![docker run](images/1.png)
 
-5. Open a web browser and enter the following address: [http://127.0.0.1:6080/](http://127.0.0.1:6080/). The following interface should be shown in the browser.
+5. Open a web browser and enter: [http://127.0.0.1:6080/](http://127.0.0.1:6080/). The following interface should be shown in the browser.
 
     ![vnc](images/2.png)
 
