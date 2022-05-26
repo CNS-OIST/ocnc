@@ -1,4 +1,8 @@
 # Software repository for OIST Computational Neuroscience Course (OCNC)
+
+**NOTE**
+This repository is currently used for testing only.
+
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
 ## Prerequisites
