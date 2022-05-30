@@ -47,7 +47,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 8. Start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
     * Clone the ocnc github repository to your docker system.
         ```
-        docker clone https://github.com/CNS-OIST/ocnc.git
+        git clone https://github.com/CNS-OIST/ocnc.git
         ```
     * Jupyter notebook
         ```
