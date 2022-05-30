@@ -18,9 +18,14 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
 4. In the Terminal, execute the following command to fetch and start the OCNC docker container, note that `-v ~/:/work` mount your current directory (in the above case, `ocnc_tutorial`) as `/work` in your Docker container system, and `--rm` set the container to be destroyed automatically after use (i.e. any change to the docker system will not be saved except the files stored in `/work`). For more information about the Docker commands, please visit [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
-    ```
-    docker run -p 6080:80 --rm -v ~/:/work cnsoist/ocnc:2022_v1
-    ```
+    * For regular user
+        ```
+        docker run -p 6080:80 --rm -v ~/:/work cnsoist/ocnc:2022_v2
+        ```
+    * For Apple silicon CPU user
+        ```
+        docker run -p 6080:80 --rm -v ~/:/work cnsoist/ocnc:2022_m1_v2
+        ```
     You should see similar information as below from the Terminal.
 
     ![docker run](images/1.png)
@@ -40,6 +45,18 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     You can store and exchange files between your host system and the docker system here.
 
 8. Start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
+    * Clone the ocnc github repository to your docker system.
+        ```
+        docker clone https://github.com/CNS-OIST/ocnc.git
+        ```
+    * Jupyter notebook
+        ```
+        jupyter notebook --ip=0.0.0.0 --allow-root
+        ```
+    * Jupyterlab
+        ```
+        jupyter lab --ip=0.0.0.0 --allow-root
+        ```
     * Python3
         ```
         python
@@ -65,14 +82,6 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
             ```
             import stan
             ```
-    * Jupyter notebook
-        ```
-        jupyter notebook --ip=0.0.0.0 --allow-root
-        ```
-    * Jupyterlab
-        ```
-        jupyter lab --ip=0.0.0.0 --allow-root
-        ```
     * NEURON with GUI and hoc interpreter
         ```
         nrngui
