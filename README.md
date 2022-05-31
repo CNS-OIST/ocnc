@@ -45,6 +45,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
     go into the directory, and start Jupyter notebook
     ```
+    cd ocnc
     jupyter notebook --ip=0.0.0.0 --allow-root
     ```
     A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
