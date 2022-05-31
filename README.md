@@ -38,11 +38,24 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     cd /work
     ```
     You can store and exchange files between your host system and the docker system here.
+    
+    Then clone the ocnc github repository.
+    ```
+    git clone https://github.com/CNS-OIST/ocnc.git
+    ```
+    go into the directory, and start Jupyter notebook
+    ```
+    jupyter notebook --ip=0.0.0.0 --allow-root
+    ```
+    A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
+    Please check the default behaviors of this test from the video here, if yours bahave differently, please contact <w.chen@oist.jp>.
 
-8. Start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
-    * Clone the ocnc github repository to your docker system.
+
+9. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
+    * update the ocnc github repository.
         ```
-        git clone https://github.com/CNS-OIST/ocnc.git
+        cd /work/ocnc
+        git pull
         ```
     * Jupyter notebook
         ```
@@ -81,4 +94,4 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         ```
         nrngui
         ```
-9. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
+10. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
