@@ -19,6 +19,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 4. In the Terminal, execute the following command to fetch and start the OCNC docker container, note that `-v ~/:/work` mount your current directory (in the above case, `ocnc_tutorial`) as `/work` in your Docker container system, and `--rm` set the container to be destroyed automatically after use (i.e. any change to the docker system will not be saved except the files stored in `/work`). For more information about the Docker commands, please visit [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
     ```
+    docker pull cnsoist/ocnc:2022
     docker run -p 6080:80 --rm -v ~/:/work cnsoist/ocnc:2022
     ```
     You should see similar information as below from the Terminal.
