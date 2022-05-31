@@ -49,7 +49,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     jupyter notebook --ip=0.0.0.0 --allow-root
     ```
     A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
-    Please check the default behaviors of this test from the video here, if yours bahave differently, please contact <w.chen@oist.jp>.
+    Please check the default behaviors of this test from the video here, if yours behave differently, please contact <w.chen@oist.jp>.
 
     [![OCNC Docker Video](https://img.youtube.com/vi/vG2obB0_lDk/0.jpg)](https://www.youtube.com/watch?v=vG2obB0_lDk)
 
@@ -59,6 +59,11 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         cd /work/ocnc
         git pull
         ```
+    * Copying and Pasting
+        * General e.g. in `Firefox`: `ctrl` + `c`, `ctrl` + `v` 
+        * In `LXTerminal`: `ctrl` + `shift` + `c`, `ctrl` + `shift` + `v`
+        * Between the host system and the docker system: Click the clipboard button in the left `novnc` sidebar, it contains the clipboard content of the docker system.
+            ![clipboard](images/4.png)
     * Jupyter notebook
         ```
         jupyter notebook --ip=0.0.0.0 --allow-root
