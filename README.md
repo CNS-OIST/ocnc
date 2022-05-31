@@ -105,3 +105,16 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         nrngui
         ```
 9. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
+
+## Connect to the docker system using vnc viewer
+
+If you want to connect to the docker system using a vnc viewer such as [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/) instead of the browser, start the docker with
+```
+docker run -p 6080:80 -p 5900:5900 --rm -v ~/:/work cnsoist/ocnc:2022
+```
+Open your vnc viewer and enter `127.0.0.1:5900` as the address
+
+![vnc address](images/5.png)
+
+a vnc connection to the docker system should then be displayed.
+![vnc view](images/6.png)
