@@ -51,7 +51,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     Please check the default behaviors of this test from the video here, if yours bahave differently, please contact <w.chen@oist.jp>.
 
 
-9. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
+8. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
     * update the ocnc github repository.
         ```
         cd /work/ocnc
@@ -94,4 +94,4 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         ```
         nrngui
         ```
-10. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
+9. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
