@@ -52,9 +52,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
     Please check the default behaviors of this test from the video here, if yours behave differently, please contact <w.chen@oist.jp>.
 
-    <a href="http://www.youtube.com/watch?feature=player_embedded&v=vG2obB0_lDk" target="_blank">
-    <img src="https://img.youtube.com/vi/vG2obB0_lDk/0.jpg" alt="Watch the video" width="360" height="240" border="10" />
-    </a>
+    [![OCNC Docker Video](https://img.youtube.com/vi/vG2obB0_lDk/0.jpg)](https://www.youtube.com/watch?v=vG2obB0_lDk)
 
 8. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
     * update the ocnc github repository.
