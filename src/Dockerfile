@@ -38,7 +38,7 @@ RUN rm -rf STEPS && \
     echo "/usr/lib/python3.8/config-3.8-x86_64-linux-gnu" >> /etc/ld.so.conf.d/python-lib.conf \
   && ldconfig
 RUN python -m pip install --upgrade --user pip && \
-    python -m pip install neuron brian2 pystan pytest && \
+    python -m pip install neuron brian2 pystan==2.19.1.1 pytest && \
     pip install jupyterlab
 RUN apt update
 RUN apt install -y gedit firefox desktop-file-utils swig libxrandr-dev libxinerama-dev \
