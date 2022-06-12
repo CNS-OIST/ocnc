@@ -17,7 +17,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
     ```
     docker pull cnsoist/ocnc:2022
-    docker run -p 6080:80 --rm -v ~/:/work cnsoist/ocnc:2022
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2022
     ```
     You should see similar information as below from the Terminal.
 
