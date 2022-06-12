@@ -95,7 +95,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
             ```
         * Pystan [https://pystan.readthedocs.io/en/latest/](https://pystan.readthedocs.io/en/latest/)
             ```
-            import stan
+            import pystan
             ```
     * NEURON with GUI and hoc interpreter
         ```
