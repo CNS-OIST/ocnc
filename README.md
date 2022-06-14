@@ -19,6 +19,12 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     docker pull cnsoist/ocnc:2022
     docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2022
     ```
+    
+    for Windows, you may need to specify the path of your directory, e.g.
+    ```
+    docker run -p 6080:80 --rm -v C:\Users\ocnc2022\ocnc_tutorial:/work cnsoist/ocnc:2022
+    ```
+    
     You should see similar information as below from the Terminal.
 
     ![docker run](images/1.png)
