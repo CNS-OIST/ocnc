@@ -16,13 +16,13 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 4. In the Terminal, execute the following command to fetch and start the OCNC docker container, note that ``-v `pwd`/:/work`` mount your current directory (in the above case, `ocnc_tutorial`) as `/work` in your Docker container system, and `--rm` set the container to be destroyed automatically after use (i.e. any change to the docker system will not be saved except the files stored in `/work`). For more information about the Docker commands, please visit [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
     ```
-    docker pull cnsoist/ocnc:2022
-    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2022
+    docker pull cnsoist/ocnc:2023
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2023
     ```
     
     for Windows, you may need to specify the path of your directory, e.g.
     ```
-    docker run -p 6080:80 --rm -v C:\Users\ocnc2022\ocnc_tutorial:/work cnsoist/ocnc:2022
+    docker run -p 6080:80 --rm -v C:\Users\ocnc2023\ocnc_tutorial:/work cnsoist/ocnc:2023
     ```
     
     You should see similar information as below from the Terminal.
@@ -33,7 +33,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
     ![vnc](images/2.png)
 
-6. Double click the `LXTerminal` icon to open a terminal in the docker system. You can also double click the `ocnc2022` icon to access this repository page for future references.
+6. Double click the `LXTerminal` icon to open a terminal in the docker system. You can also double click the `ocnc` icon to access this repository page for future references.
 
     ![terminal](images/3.png)
 
@@ -57,7 +57,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
     | [![OCNC Docker Video](https://img.youtube.com/vi/vG2obB0_lDk/0.jpg)](https://www.youtube.com/watch?v=vG2obB0_lDk) |
     |:--:|
-    | <b>OCNC2022 Docker image test demostration (Youtube)</b>|
+    | <b>OCNC Docker image test demostration (Youtube)</b>|
 
 8. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
     * update the ocnc github repository.
