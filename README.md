@@ -47,12 +47,18 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
     git clone https://github.com/CNS-OIST/ocnc.git
     ```
-    go into the directory, and start Jupyter notebook
+    We want to use jupyter notebook to test our software packages, but first we need to setup the jupyter server password using
+    ```
+    jupyter notebook password
+    ```
+    you can enter whatever password you like, just need to remember it as jupyter will ask you for it later.
+    Now go into the directory, and start Jupyter notebook
     ```
     cd ocnc
     jupyter notebook --ip=0.0.0.0 --allow-root
     ```
     A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
+    Jupyter may ask for the password you've just set from time to time.
     Please check the default behaviors of this test from the video below, if yours behave differently, please contact <w.chen@oist.jp>.
 
     | [![OCNC Docker Video](https://img.youtube.com/vi/vG2obB0_lDk/0.jpg)](https://www.youtube.com/watch?v=vG2obB0_lDk) |
@@ -70,11 +76,15 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         * In `LXTerminal`: `ctrl` + `shift` + `c`, `ctrl` + `shift` + `v`
         * Between the host system and the docker system: Click the clipboard button in the left `novnc` sidebar, it contains the clipboard content of the docker system.
             ![clipboard](images/4.png)
-    * Jupyter notebook
+    * Setting Jupyter server password
+        ```
+        jupyter notebook password
+        ```
+    * Starting Jupyter notebook
         ```
         jupyter notebook --ip=0.0.0.0 --allow-root
         ```
-    * Jupyterlab
+    * Starting Jupyterlab
         ```
         jupyter lab --ip=0.0.0.0 --allow-root
         ```
