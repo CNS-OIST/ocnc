@@ -48,5 +48,5 @@ RUN python -m pip install lockfile arviz pygame gym[classic_control] meshio ipyw
 RUN mkdir /root/Desktop && \
     echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
     >> /root/Desktop/lxterminal.desktop && \
-    echo "[Desktop Entry]\nType=Link\nName=ocnc2022\nIcon=text-html\nURL=https://github.com/CNS-OIST/ocnc"\
+    echo "[Desktop Entry]\nType=Link\nName=ocnc\nIcon=text-html\nURL=https://github.com/CNS-OIST/ocnc"\
     >> /root/Desktop/ocnc_github.desktop
