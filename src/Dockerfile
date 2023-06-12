@@ -3,10 +3,11 @@ FROM $BASE_CONTAINER
 LABEL author="Weiliang Chen"
 
 USER root
-RUN apt update
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+
 RUN apt install -y software-properties-common
-RUN apt update
 RUN add-apt-repository ppa:nest-simulator/nest
+RUN apt update
 RUN apt install -y build-essential \
     cmake              \
     cython3            \
