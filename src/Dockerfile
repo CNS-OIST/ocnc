@@ -48,6 +48,7 @@ RUN apt install -y gedit firefox desktop-file-utils swig libxrandr-dev libxinera
 RUN python -m pip install lockfile arviz pygame gym[classic_control] meshio ipywidgets ipyvtklink pyvista[all]
 RUN python -m pip uninstall -y flask
 RUN python -m pip install flask
+RUN python -m pip install optinist
 RUN mkdir /root/Desktop && \
     echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
     >> /root/Desktop/lxterminal.desktop && \
