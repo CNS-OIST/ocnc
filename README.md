@@ -109,10 +109,6 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
             ```
             import brian2
             ```
-        * Pystan [https://pystan.readthedocs.io/en/latest/](https://pystan.readthedocs.io/en/latest/)
-            ```
-            import pystan
-            ```
     * NEURON with GUI and hoc interpreter
         ```
         nrngui
@@ -123,7 +119,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
 If you want to connect to the docker system using a vnc viewer such as [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/) instead of the browser, start the docker with
 ```
-docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2022
+docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2023
 ```
 Open your vnc viewer and enter `127.0.0.1:5900` as the address
 
