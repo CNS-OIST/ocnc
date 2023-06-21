@@ -2,6 +2,22 @@
 
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
+## Commands to add repositories for OCNC2023 tutorials (Run with `LXTerminal` from the docker system)
+* Python
+```
+cd /work
+git clone https://github.com/CNS-OIST/ocnc2023python.git
+cd ocnc2023python
+jupyter notebook --ip=0.0.0.0 --allow-root
+```
+* NEST
+```
+cd /work
+git clone https://github.com/carlosengutierrez/ocnc2023NEST.git
+cd ocnc2023NEST
+jupyter notebook --ip=0.0.0.0 --allow-root
+```
+  
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
