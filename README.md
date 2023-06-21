@@ -18,7 +18,14 @@ git clone https://github.com/carlosengutierrez/ocnc2023NEST.git
 cd ocnc2023NEST
 jupyter notebook --ip=0.0.0.0 --allow-root
 ```
-  
+*STEPS
+```
+cd /work
+git clone https://github.com/CNS-OIST/ocnc2023steps.git
+cd ocnc2023steps
+jupyter notebook --ip=0.0.0.0 --allow-root
+```
+
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
