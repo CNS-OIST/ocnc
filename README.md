@@ -3,6 +3,7 @@
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
 ## Commands to add repositories for OCNC2023 tutorials (Run with `LXTerminal` from the docker system)
+If you just restart your docker container, remember to use `jupyter notebook password` to set your jupyter password first.
 * Python
 ```
 cd /work
