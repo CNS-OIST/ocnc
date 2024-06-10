@@ -2,30 +2,6 @@
 
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
-## Commands to add repositories for OCNC2023 tutorials (Run with `LXTerminal` from the docker system)
-If you just restart your docker container, remember to use `jupyter notebook password` to set your jupyter password first.
-* Python
-```
-cd /work
-git clone https://github.com/CNS-OIST/ocnc2023python.git
-cd ocnc2023python
-jupyter notebook --ip=0.0.0.0 --allow-root
-```
-* NEST
-```
-cd /work
-git clone https://github.com/carlosengutierrez/ocnc2023NEST.git
-cd ocnc2023NEST
-jupyter notebook --ip=0.0.0.0 --allow-root
-```
-*STEPS
-```
-cd /work
-git clone https://github.com/CNS-OIST/ocnc2023steps.git
-cd ocnc2023steps
-jupyter notebook --ip=0.0.0.0 --allow-root
-```
-
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
@@ -39,14 +15,21 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
 4. In the Terminal, execute the following command to fetch and start the OCNC docker container, note that ``-v `pwd`/:/work`` mount your current directory (in the above case, `ocnc_tutorial`) as `/work` in your Docker container system, and `--rm` set the container to be destroyed automatically after use (i.e. any change to the docker system will not be saved except the files stored in `/work`). For more information about the Docker commands, please visit [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
+    For Mac/Linux machine with x86 cpu:
     ```
-    docker pull cnsoist/ocnc:2023
-    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2023
+    docker pull cnsoist/ocnc:2024
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2024
     ```
     
+    For Mac machine with Apple Silicon cpu:
+    ```
+    docker pull cnsoist/ocnc:2024_apple_silicon
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2024_apple_silicon
+    ```
+
     for Windows, you may need to specify the path of your directory, e.g.
     ```
-    docker run -p 6080:80 --rm -v C:\Users\ocnc2023\ocnc_tutorial:/work cnsoist/ocnc:2023
+    docker run -p 6080:80 --rm -v C:\Users\YOUR_USER_NAME\ocnc_tutorial:/work cnsoist/ocnc:2024
     ```
     
     You should see similar information as below from the Terminal.
@@ -71,23 +54,14 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
     git clone https://github.com/CNS-OIST/ocnc.git
     ```
-    We want to use jupyter notebook to test our software packages, but first we need to setup the jupyter server password using
-    ```
-    jupyter notebook password
-    ```
-    you can enter whatever password you like, just need to remember it as jupyter will ask you for it later.
-    Now go into the directory, and start Jupyter notebook
+    Go into the directory, and start Jupyter notebook
     ```
     cd ocnc
-    jupyter notebook --ip=0.0.0.0 --allow-root
+    jupyter notebook --allow-root
     ```
     A Jupyter notebook interface should pop up, within it, open the `simulator_tests.ipynb`, and from the top menu select `Cell`->`Run All`.
     Jupyter may ask for the password you've just set from time to time.
     Please check the default behaviors of this test from the video below, if yours behave differently, please contact <w.chen@oist.jp>.
-
-    | [![OCNC Docker Video](https://img.youtube.com/vi/vG2obB0_lDk/0.jpg)](https://www.youtube.com/watch?v=vG2obB0_lDk) |
-    |:--:|
-    | <b>OCNC Docker image test demostration (Youtube)</b>|
 
 8. At the tutorial sessions, start the computational neuroscience software according to your tutorial instructions from the `LXTerminal`. Here are some general commands for different software.
     * update the ocnc github repository.
@@ -100,17 +74,13 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         * In `LXTerminal`: `ctrl` + `shift` + `c`, `ctrl` + `shift` + `v`
         * Between the host system and the docker system: Click the clipboard button in the left `novnc` sidebar, it contains the clipboard content of the docker system.
             ![clipboard](images/4.png)
-    * Setting Jupyter server password
-        ```
-        jupyter notebook password
-        ```
     * Starting Jupyter notebook
         ```
-        jupyter notebook --ip=0.0.0.0 --allow-root
+        jupyter notebook --allow-root
         ```
     * Starting Jupyterlab
         ```
-        jupyter lab --ip=0.0.0.0 --allow-root
+        jupyter lab --allow-root
         ```
     * Python3
         ```
@@ -121,17 +91,21 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
             ```
             import neuron
             ```
-        * NEST [https://nest-simulator.readthedocs.io/en/v3.3/](https://nest-simulator.readthedocs.io/en/v3.3/)
+        * NEST [https://nest-simulator.readthedocs.io/](https://nest-simulator.readthedocs.io/)
             ```
             import nest
             ```
-        * STEPS[http://steps.sourceforge.net/](http://steps.sourceforge.net/)
+        * STEPS [http://steps.sourceforge.net/](http://steps.sourceforge.net/)
             ```
             import steps
             ```
-        * Brian2[https://brian2.readthedocs.io/en/stable/](https://brian2.readthedocs.io/en/stable/)
+        * Brian2 [https://brian2.readthedocs.io/en/stable/](https://brian2.readthedocs.io/en/stable/)
             ```
             import brian2
+            ```
+        * pystan [https://pystan.readthedocs.io/en/latest/](https://pystan.readthedocs.io/en/latest/)
+            ```
+            import stan
             ```
     * NEURON with GUI and hoc interpreter
         ```
@@ -143,7 +117,7 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
 
 If you want to connect to the docker system using a vnc viewer such as [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/) instead of the browser, start the docker with
 ```
-docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2023
+docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2024
 ```
 Open your vnc viewer and enter `127.0.0.1:5900` as the address
 
