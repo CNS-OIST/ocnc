@@ -49,7 +49,8 @@ RUN apt update
 RUN apt install -y gedit firefox desktop-file-utils swig libxrandr-dev libxinerama-dev \
     libxcursor-dev libxi-dev unzip && \
     update-desktop-database
-RUN python -m pip install lockfile arviz pygame gym[classic_control] meshio ipywidgets ipyvtklink
+RUN python -m pip install lockfile pygame gym[classic_control] meshio ipywidgets ipyvtklink
+RUN python -m pip install httpstan pystan arviz
 RUN mkdir /root/Desktop && \
     echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
     >> /root/Desktop/lxterminal.desktop && \

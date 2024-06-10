@@ -50,6 +50,11 @@ RUN apt install -y gedit firefox desktop-file-utils swig libxrandr-dev libxinera
     libxcursor-dev libxi-dev unzip && \
     update-desktop-database
 RUN python -m pip install lockfile arviz pygame gym[classic_control] meshio ipywidgets ipyvtklink
+RUN git clone https://github.com/stan-dev/httpstan.git
+WORKDIR /tmp/httpstan
+RUN git checkout 4.12.0
+RUN make && python -m pip install poetry && python -m poetry build && python -m pip install dist/*.whl
+RUN python -m pip install pystan arviz
 RUN mkdir /root/Desktop && \
     echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
     >> /root/Desktop/lxterminal.desktop && \
