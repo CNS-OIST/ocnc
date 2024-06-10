@@ -31,30 +31,41 @@ RUN apt install -y build-essential \
     python3-scipy      \
     wget               \  
     cmake libboost-all-dev pkg-config libopenblas-dev \
-    libmetis-dev libeigen3-dev  libgsl-dev 
-RUN pip3 install build pip-tools
+    libmetis-dev libeigen3-dev  libgsl-dev \
+    gsl-bin libreadline-dev python3-all-dev python3-junitparser ipython3 python3-future \
+    libmusic-dev music-bin python3-pytest python3-pytest-timeout python3-pytest-xdist python3-pandas \
+    gedit firefox desktop-file-utils swig libxrandr-dev libxinerama-dev \
+    libxcursor-dev libxi-dev unzip && \
+    update-desktop-database
+
+RUN python -m pip install --upgrade --user pip && \
+    python -m pip install neuron brian2 pytest jupyterlab build pip-tools \
+    lockfile arviz pygame gym[classic_control] meshio ipywidgets ipyvtklink
+RUN python -m pip uninstall -y traitlets && python -m pip install traitlets==5.9.0
+
 WORKDIR /tmp
 RUN git clone --recursive https://github.com/CNS-OIST/STEPS.git 
 WORKDIR /tmp/STEPS
 RUN git checkout ocnc2024 && mkdir build
 WORKDIR /tmp/STEPS/build
 RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local -DPython_INSTALL_PREFIX=/usr/local/lib/python3.10/dist-packages .. && make && make install 
+
 WORKDIR /tmp
-RUN rm -rf STEPS 
-RUN python -m pip install --upgrade --user pip && \
-    python -m pip install neuron brian2 pytest && \
-    python -m pip install jupyterlab
-RUN python -m pip uninstall -y traitlets && python -m pip install traitlets==5.9.0
-RUN apt update
-RUN apt install -y gedit firefox desktop-file-utils swig libxrandr-dev libxinerama-dev \
-    libxcursor-dev libxi-dev unzip && \
-    update-desktop-database
-RUN python -m pip install lockfile arviz pygame gym[classic_control] meshio ipywidgets ipyvtklink
 RUN git clone https://github.com/stan-dev/httpstan.git
+
 WORKDIR /tmp/httpstan
 RUN git checkout 4.12.0
 RUN make && python -m pip install poetry && python -m poetry build && python -m pip install dist/*.whl
-RUN python -m pip install pystan arviz
+RUN python -m pip install pystan
+
+WORKDIR /tmp
+RUN git clone https://github.com/nest/nest-simulator.git
+RUN mkdir nest-simulator/build
+WORKDIR /tmp/nest-simulator/build
+RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && make && make install && make installcheck
+ENV PYTHONPATH "${PYTHONPATH}:/usr/local/lib/python3.10/site-packages"
+ENV PATH "${PATH}:/usr/local/bin"
+RUN rm -rf /tmp/* 
 RUN mkdir /root/Desktop && \
     echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
     >> /root/Desktop/lxterminal.desktop && \
