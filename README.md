@@ -2,6 +2,10 @@
 
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
+For Optinist tutorial docker image installation, please follow the instructions in
+
+[https://github.com/oist/OCNC_tutorial_optinist/](https://github.com/oist/OCNC_tutorial_optinist/)
+
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
