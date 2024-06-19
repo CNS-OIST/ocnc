@@ -6,6 +6,12 @@ For Optinist tutorial docker image installation, please follow the instructions 
 
 [https://github.com/oist/OCNC_tutorial_optinist/](https://github.com/oist/OCNC_tutorial_optinist/)
 
+For NEST tutorial, clone the following repository inside your docker system
+
+```
+git clone  https://github.com/sunzhe839/ocnc2024NEST
+```
+
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
