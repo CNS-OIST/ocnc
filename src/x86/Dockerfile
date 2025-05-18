@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=fredblgr/ubuntu-novnc:22.04
+ARG BASE_CONTAINER=cnsoist/ocnc:2024
 FROM $BASE_CONTAINER
 LABEL author="Weiliang Chen"
 
@@ -44,13 +44,20 @@ RUN python -m pip install --upgrade --user pip && \
 RUN python -m pip uninstall -y traitlets && python -m pip install traitlets==5.9.0
 
 WORKDIR /tmp
+RUN wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+RUN bash Miniforge3.sh -b -p "/opt/miniforge"
+RUN echo ". /opt/miniforge/etc/profile.d/conda.sh" >> /root/.bashrc
+
+WORKDIR /tmp
+RUN rm -rf *
 RUN git clone --recursive https://github.com/CNS-OIST/STEPS.git 
 WORKDIR /tmp/STEPS
 RUN mkdir build
 WORKDIR /tmp/STEPS/build
-RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local -DPython_INSTALL_PREFIX=/usr/local/lib/python3.10/dist-packages .. && make && make install 
+RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local -DPython_INSTALL_PREFIX=/usr/local/lib/python3.10/dist-packages .. && make && make install
 
 WORKDIR /tmp
+RUN rm -rf *
 RUN git clone https://github.com/stan-dev/httpstan.git
 
 WORKDIR /tmp/httpstan
@@ -59,15 +66,9 @@ RUN make && python -m pip install poetry && python -m poetry build && python -m 
 RUN python -m pip install pystan
 
 WORKDIR /tmp
+RUN rm -rf *
 RUN git clone https://github.com/nest/nest-simulator.git
 RUN mkdir nest-simulator/build
 WORKDIR /tmp/nest-simulator/build
-RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && make && make install && make installcheck
-ENV PYTHONPATH "${PYTHONPATH}:/usr/local/lib/python3.10/site-packages"
-ENV PATH "${PATH}:/usr/local/bin"
+RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && make && make install
 RUN rm -rf /tmp/* 
-RUN mkdir /root/Desktop && \
-    echo "[Desktop Entry]\nType=Link\nName=LXTerminal\nIcon=lxterminal\nURL=/usr/share/applications/lxterminal.desktop"\
-    >> /root/Desktop/lxterminal.desktop && \
-    echo "[Desktop Entry]\nType=Link\nName=ocnc\nIcon=text-html\nURL=https://github.com/CNS-OIST/ocnc"\
-    >> /root/Desktop/ocnc_github.desktop
