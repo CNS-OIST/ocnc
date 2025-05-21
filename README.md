@@ -2,11 +2,11 @@
 
 This repository provides Docker image with pre-compiled computational neuroscience software and usage instructions for the OIST Computational Neuroscience Course (OCNC). For more information of the course, please visit [https://groups.oist.jp/ocnc](https://groups.oist.jp/ocnc).
 
-For Optinist tutorial docker image installation, please follow the instructions in
+(Not Update Yet) For Optinist tutorial docker image installation, please follow the instructions in
 
 [https://github.com/oist/OCNC_tutorial_optinist/](https://github.com/oist/OCNC_tutorial_optinist/)
 
-For NEST tutorial, clone the following repository inside your docker system
+(Not Update Yet) For NEST tutorial, clone the following repository inside your docker system
 
 ```
 git clone  https://github.com/sunzhe839/ocnc2024NEST
