@@ -6,12 +6,6 @@ For Optinist tutorial docker image installation, please follow the instructions 
 
 [https://github.com/oist/OCNC_tutorial_optinist/](https://github.com/oist/OCNC_tutorial_optinist/)
 
-For NEST tutorial, clone the following repository inside your docker system
-
-```
-git clone  https://github.com/sunzhe839/ocnc2024NEST
-```
-
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
@@ -25,21 +19,21 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
     ```
 4. In the Terminal, execute the following command to fetch and start the OCNC docker container, note that ``-v `pwd`/:/work`` mount your current directory (in the above case, `ocnc_tutorial`) as `/work` in your Docker container system, and `--rm` set the container to be destroyed automatically after use (i.e. any change to the docker system will not be saved except the files stored in `/work`). For more information about the Docker commands, please visit [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
-    For Mac/Linux machine with x86 cpu:
+    For Windows/Linux/Mac machine with x86 cpu:
     ```
-    docker pull cnsoist/ocnc:2024
-    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2024
+    docker pull cnsoist/ocnc:2025
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2025
     ```
     
     For Mac machine with Apple Silicon cpu:
     ```
-    docker pull cnsoist/ocnc:2024_apple_silicon
-    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2024_apple_silicon
+    docker pull cnsoist/ocnc:2025_apple_silicon
+    docker run -p 6080:80 --rm -v `pwd`:/work cnsoist/ocnc:2025_apple_silicon
     ```
 
     for Windows, you may need to specify the path of your directory, e.g.
     ```
-    docker run -p 6080:80 --rm -v C:\Users\YOUR_USER_NAME\ocnc_tutorial:/work cnsoist/ocnc:2024
+    docker run -p 6080:80 --rm -v C:\Users\YOUR_USER_NAME\ocnc_tutorial:/work cnsoist/ocnc:2025
     ```
     
     You should see similar information as below from the Terminal.
@@ -123,11 +117,20 @@ Download and install Docker Desktop [https://www.docker.com/products/docker-desk
         ```
 9. Once you finish your work, make sure your files have been saved to `/work` (aka `ocnc_tutorial` in your host system), then go back to the Terminal/Command prompt/PowerShell of your host system, and press `ctrl + c` to stop the docker container.
 
+10. A [miniforge distribution](https://github.com/conda-forge/miniforge) has been pre-isntalled and can be activated with the following command
+    ```
+    conda activate base
+    ```
+    Please note that the above neuroscience applications are not available under the conda environment. You can deactivate conda environment with
+    ```
+    conda deactivate
+    ```
+
 ## Connect to the docker system using vnc viewer
 
 If you want to connect to the docker system using a vnc viewer such as [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/) instead of the browser, start the docker with
 ```
-docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2024
+docker run -p 6080:80 -p 5900:5900 --rm -v `pwd`:/work cnsoist/ocnc:2025
 ```
 Open your vnc viewer and enter `127.0.0.1:5900` as the address
 
