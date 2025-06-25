@@ -6,6 +6,9 @@ For Optinist tutorial docker image installation, please follow the instructions 
 
 [https://github.com/oist/OCNC_tutorial_optinist/](https://github.com/oist/OCNC_tutorial_optinist/)
 
+For Brian2
+[https://github.com/danielmk/OCNC2025_brian2](https://github.com/danielmk/OCNC2025_brian2)
+
 ## Prerequisites
 Download and install Docker Desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/). For Mac users, please note that Docker provides different installers for Intel and Apple silicon cpu.
 
