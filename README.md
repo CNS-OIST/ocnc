@@ -20,6 +20,10 @@ Links for Tutorials
 
   [https://github.com/AshleyTyrer/DCM_for_ERPs](https://github.com/AshleyTyrer/DCM_for_ERPs)
 
+* For NEURON tutorial
+
+    [https://github.com/danielmk/OCNC2025_NEURON](https://github.com/danielmk/OCNC2025_NEURON)
+
 * For Optinist tutorial docker image installation, please follow the instructions in
 
     [https://github.com/oist/OCNC_tutorial_optinist](https://github.com/oist/OCNC_tutorial_optinist)
