@@ -24,6 +24,10 @@ Links for Tutorials
 
     [https://github.com/danielmk/OCNC2025_NEURON](https://github.com/danielmk/OCNC2025_NEURON)
 
+* For DeepLabCut tutorial
+
+    [https://github.com/TerriiYaki/OCNC-DLC-2025](https://github.com/TerriiYaki/OCNC-DLC-2025)
+
 * For Optinist tutorial docker image installation, please follow the instructions in
 
     [https://github.com/oist/OCNC_tutorial_optinist](https://github.com/oist/OCNC_tutorial_optinist)
